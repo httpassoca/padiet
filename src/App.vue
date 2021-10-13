@@ -1,30 +1,59 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav>
+    <router-link to="/items">Items</router-link>
+    <router-link to="/refeições">Refeições</router-link>
+    <router-link to="/metas">Metas</router-link>
+    <router-link to="/logout">Logout</router-link>
+  </nav>
+  <div class="page">
+    <router-view/>
   </div>
-  <router-view/>
+  <Diet class="diet"/>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import Diet from '@/components/Diet.vue';
 
-#nav {
-  padding: 30px;
+@Options({
+  components: { Diet },
+})
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+export default class App extends Vue {}
+</script>
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style lang="sass">
+*
+  padding: 0
+  margin: 0
+  outline: none
+  box-sizing: border-box
+
+#app
+  display: flex
+  font-family: Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: #2c3e50
+
+nav
+  height: 100vh
+  width: 250px
+  display: flex
+  flex-direction: column
+  padding: 20px
+  background-color: #191919
+  a
+    font-weight: bold
+    color: #ccc
+
+    &.router-link-exact-active
+      color: #42b983
+.page
+  background-color: red
+  flex-grow: 1
+.diet
+  background-color: #191919
+  width: fit-content
+  flex-grow: 1
 </style>

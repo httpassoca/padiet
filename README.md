@@ -1,24 +1,13 @@
 # padiet
+An diet application to organize your meals and beat the diary macros!
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
+## Try it!
 ```
-yarn serve
+yarn && yarn serve
 ```
 
-### Compiles and minifies for production
+### Show it!
 ```
 yarn build
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
